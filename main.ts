@@ -2,8 +2,13 @@ import { app } from "./app.ts";
 
 console.log("=== main.ts start ===");
 
-const port = 8080;
+// const port = 8080;
+// console.log(`Setting up the server on port ${port}`);
+
+const port = Number(Deno.env.get("PORT")) || 8080;
 console.log(`Setting up the server on port ${port}`);
+
+await app.listen({ port, hostname: "0.0.0.0" });
 
 setTimeout(() => {
   console.log("=== Tick: 3秒経過 ===");
