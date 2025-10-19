@@ -11,7 +11,23 @@ const config: postgres.ClientOptions = {
   },
 };
 
+try {
+  const pool = new postgres.Pool(config, 2, true);
+  console.log("Pool created successfully");
+
+  // 簡単な接続テスト
+  const client = await pool.connect();
+  console.log("Connected to database");
+  client.release();
+} catch (e) {
+  console.error("Failed to create Pool or connect:", e);
+}
+
+console.log("=== Pool Config ===");
+console.log(JSON.stringify(config, null, 2));
+
 const pool = new postgres.Pool(config, 2, true);
+console.log("Pool created successfully");
 
 export async function getConnection(): Promise<postgres.PoolClient> {
   return await pool.connect();
