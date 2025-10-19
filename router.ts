@@ -1,5 +1,7 @@
 import { Router } from "./deps.ts";
+console.log("=== router.ts start ===");
 import { list, MealEntry, record, remove, update } from "./meals.ts";
+console.log("Router functions imported successfully");
 
 const mealsRouter = new Router();
 
