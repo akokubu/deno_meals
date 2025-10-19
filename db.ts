@@ -2,7 +2,7 @@ import { postgres } from "./deps.ts";
 
 const config: postgres.ClientOptions = {
   password: Deno.env.get("PASSWORD"),
-  port: Deno.env.get("PORT"),
+  port: Deno.env.get("DB_PORT"),
   hostname: Deno.env.get("HOST_NAME"),
   user: Deno.env.get("DB_USER"),
   database: Deno.env.get("DATABASE"),
