@@ -3,7 +3,7 @@ import { app } from "./app.ts";
 console.log("=== main.ts start ===");
 
 console.log(`PORT ${Deno.env.get("PORT")}`);
-const port = Number(Deno.env.get("PORT")) || 8081;
+const port = Number(Deno.env.get("PORT")) || 0;
 console.log(`Setting up the server on port ${port}`);
 
 app
